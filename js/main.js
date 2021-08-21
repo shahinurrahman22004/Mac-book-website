@@ -12,12 +12,13 @@ function extraAccessories(accs, accsPrice){
     const alltotalPrice = document.getElementById('all-Total-price');
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
-    const allValu = alltotalPrice.innerText = totalPriceInd;
+    alltotalPrice.innerText = totalPriceInd;
    
    // console.log(totalPriceInd);
 
     if(extraMemortCost !== accsPrice){
         totalPrice.innerText = extraMemoryPrice + totalPriceInd;
+        alltotalPrice.innerText = extraMemoryPrice + totalPriceInd;
     }
 }
 
@@ -35,12 +36,15 @@ function noAccessories(accs, accsPrice){
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
 
-    const allValu = alltotalPrice.innerText = totalPriceInd;
+    alltotalPrice.innerText = totalPriceInd;
 
     if(extraMemortCost == accsPrice ){
         totalPrice.innerText = totalPriceInd - accsPrice;
-    }else{
+        alltotalPrice.innerText = totalPriceInd - accsPrice;
+    }
+    else{
         totalPrice.innerText = 0 + totalPriceInd;
+        alltotalPrice.innerText = 0 + totalPriceInd 
     }
 
     memory.innerText = 0;
@@ -77,12 +81,15 @@ document.getElementById('normal-storage').addEventListener('click', function(){
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
 
-    const allValu = alltotalPrice.innerText = totalPriceInd;
+    alltotalPrice.innerText = totalPriceInd;
 
     if(storageNormalCostPrice == 100){
          totalPrice.innerText = totalPriceInd - 100;
-    }else if(storageNormalCostPrice == 180){
+         alltotalPrice.innerText = totalPriceInd - 100;
+    }
+    else if(storageNormalCostPrice == 180){
         totalPrice.innerText = totalPriceInd - 180;
+        alltotalPrice.innerText = totalPriceInd - 180;
     }
     storageNormal.innerText = 0;
 
@@ -104,12 +111,15 @@ document.getElementById('medium-storage').addEventListener('click', function(){
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
 
-    const allValu = alltotalPrice.innerText = totalPriceInd;
+    alltotalPrice.innerText = totalPriceInd;
 
     if(storageNormalCost == 180){
         totalPrice.innerText = totalPriceInd - 180;
-    }else if(storageNormalCost !== 100){
+        alltotalPrice.innerText = totalPriceInd - 180;
+    }
+    else if(storageNormalCost !== 100){
         totalPrice.innerText = trorageNormalTotal + totalPriceInd;
+        alltotalPrice.innerText = trorageNormalTotal + totalPriceInd;
     }
     
 });
@@ -134,6 +144,7 @@ document.getElementById('free-delivery').addEventListener('click', function (){
 document.getElementById('charge-delivery').addEventListener('click', function (){
    extraAccessories('delivery-crg', 20);      
 });
+
 
 
 // pomo code area handle 
