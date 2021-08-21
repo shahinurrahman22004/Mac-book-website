@@ -1,5 +1,4 @@
-
-
+// function is here memory area 
 function extraAccessories(accs, accsPrice){
     const extraMemory = document.getElementById(accs);
     const extraMemoryCostText = extraMemory.innerText;
@@ -15,7 +14,6 @@ function extraAccessories(accs, accsPrice){
     const allTotal = parseFloat(allTotalText);
     const allValu = alltotalPrice.innerText = totalPriceInd;
    
-
    // console.log(totalPriceInd);
 
     if(extraMemortCost !== accsPrice){
@@ -90,6 +88,7 @@ document.getElementById('normal-storage').addEventListener('click', function(){
 
 });
 
+// 512GB storage area handle--------
 document.getElementById('medium-storage').addEventListener('click', function(){
     const storageNormal = document.getElementById('extra-store');
     const storageNormalText = storageNormal.innerText;
@@ -115,6 +114,7 @@ document.getElementById('medium-storage').addEventListener('click', function(){
     
 });
 
+// 1TB storage area handle ------
 document.getElementById('strong-storage').addEventListener('click', function(){
      extraAccessories('extra-store', 180);  
  });
@@ -124,15 +124,19 @@ document.getElementById('strong-storage').addEventListener('click', function(){
 
 
 // delivery area -------------
+
+// free delivary handle 
 document.getElementById('free-delivery').addEventListener('click', function (){
     noAccessories('delivery-crg', 20); 
 })
 
+// charge delivery handle 
 document.getElementById('charge-delivery').addEventListener('click', function (){
    extraAccessories('delivery-crg', 20);      
 });
 
 
+// pomo code area handle 
 document.getElementById('pomo').addEventListener('click', function(){
     const codeInput = document.getElementById('code-input');
     const codeInputText = codeInput.value;
@@ -143,5 +147,9 @@ document.getElementById('pomo').addEventListener('click', function(){
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
 
-    alltotalPrice.innerText = allTotal / 20;
-})
+    // 20% discount price 
+    const discountValue = allTotal / 100 * 20;
+    alltotalPrice.innerText = allTotal - discountValue;
+
+    codeInput.value = '';
+});
