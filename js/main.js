@@ -151,16 +151,20 @@ document.getElementById('charge-delivery').addEventListener('click', function ()
 document.getElementById('pomo').addEventListener('click', function(){
     const codeInput = document.getElementById('code-input');
     const codeInputText = codeInput.value;
-    const code = parseFloat(codeInputText);
-    codeInput.value = 'stevekaku';
-
+    
     const alltotalPrice = document.getElementById('all-Total-price');
     const allTotalText = alltotalPrice.innerText;
     const allTotal = parseFloat(allTotalText);
 
-    // 20% discount price 
-    const discountValue = allTotal / 100 * 20;
-    alltotalPrice.innerText = allTotal - discountValue;
-
-    codeInput.value = '';
+    const totalPrice = document.getElementById('total-price');
+    
+    if('stevekaku' == codeInputText){
+        // 20% discount price 
+        const discountValue = allTotal / 100 * 20;
+       
+        const disPrice = allTotal - discountValue;
+        alltotalPrice.innerText =disPrice;
+        totalPrice.innerText = disPrice;
+        codeInput.value = '';
+    }
 });
